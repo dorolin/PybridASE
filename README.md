@@ -35,8 +35,9 @@ Steps and scripts to analyse RNA-seq data for allele-specific expression (ASE) a
 ## 2. Prepare genomes
 
 * working with the *Petunia axillaris* and the *P. exserta* genome in parallel
-* *P. axillaris* v3.0.4 assembly (FASTA) and annotations (GFF) on [CoGe](https://genomevolution.org/coge/) (not public)
-* *P. exserta* v3.0.3 assembly (FASTA) and v3.0.4 annotations (GFF) on CoGe (not public)
+* *P. axillaris* v3.0.4 assembly (FASTA) from [CoGe](https://genomevolution.org/coge/) (not public) and annotations (GFF) from UBELIX `$HOME/../shared/304/Maker/Peax304_final_edited.gff` (not public)
+* *P. exserta* v3.0.3 assembly (FASTA) from CoGe (not public) and v3.0.4 annotations (GFF) from UBELIX `$HOME/../shared/304/Maker/Peex304_final_edited.gff` (not public)  
+  NOTE: as *P. exserta* v3.0.3 and v3.0.4 FASTA are identical except scaffold names, these were simply renamed in the GFF
 * convert GFF to GTF with [gffread](https://github.com/gpertea/gffread) version 0.11.4 `gffread file.gff -T -E -o file.gtf`
 * convert GFF to BED with [ea-utils](https://expressionanalysis.github.io/ea-utils/) (May 1, 2014) `gtf2bed file.gtf >file.bed`
 * create dictionary and index FASTA with `picard-tools CreateSequenceDictionary file.fa` and `samtools faidx file.fa` 
